@@ -1,5 +1,4 @@
-import main.service.PayCalculatorService;
-
+import service.PayCalculatorService;
 import java.util.Scanner;
 
 public class Main {

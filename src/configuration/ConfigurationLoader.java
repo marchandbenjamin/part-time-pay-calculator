@@ -1,10 +1,7 @@
-package main.configuration;
-
-import com.sun.tools.javac.Main;
+package configuration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class ConfigurationLoader {
@@ -14,7 +11,7 @@ public class ConfigurationLoader {
     String[] midnightShift = {};
 
     public void loadConfiguration() throws Exception {
-        String propertiesFilePath = "src/main/resources/configuration.properties";
+        String propertiesFilePath = "src/resources/configuration.properties";
         try (FileInputStream input = new FileInputStream(propertiesFilePath)) {
             properties.load(input);
         } catch (IOException e) {

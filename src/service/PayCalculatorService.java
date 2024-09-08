@@ -1,6 +1,6 @@
-package main.service;
+package service;
 
-import main.configuration.ConfigurationLoader;
+import configuration.ConfigurationLoader;
 
 import java.util.ArrayList;
 import java.util.List;
