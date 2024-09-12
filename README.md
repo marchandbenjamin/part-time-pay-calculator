@@ -44,7 +44,15 @@ One Integer representing the number for worked days
 
 And for each worked day : two Integers representing the starting and ending hour of the worker.
 
-*Example : 0 9 9 17 17 22 22 23*
+*Example :*
+
+*0 9* 
+
+*9 17*
+
+*17 22* 
+
+*22 23*
 
 
 

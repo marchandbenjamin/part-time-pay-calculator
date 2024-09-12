@@ -31,22 +31,6 @@ public class PayCalculatorService {
         readNumberOfWorkingDays();
         fillListOfWorkingHours();
         calculateTotalEarnings();
-
-        /*
-        System.out.println("X Hourly Rate " + regularHourlyRateX);
-        System.out.println("Y Hourly Rate " + nightTimeHourlyRateY);
-        System.out.println("Z Hourly Rate " + midnightHourlyRateZ);
-        for (int i = 0 ; i < listOfWorkingHours.size() ; i++) {
-            boolean[] workingHours = listOfWorkingHours.get(i);
-            System.out.println("Day: " + (i+1) + " Working hours : ");
-            for (int j = 0 ; j < workingHours.length ; j++) {
-                if (workingHours[j]) {
-                    System.out.print(" " + j);
-                }
-            }
-            System.out.println(" ");
-        }
-         */
     }
 
     private void readHourlyRates() {
