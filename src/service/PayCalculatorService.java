@@ -54,7 +54,7 @@ public class PayCalculatorService {
             hourlyRates[Integer.parseInt(hour)] = midnightHourlyRate;
         }
 
-        for(int i = 0 ; i < 24 ; i++) {
+        for (int i = 0; i < 24; i++) {
             if (hourlyRates[i] == 0) {
                 throw new Exception("An hour is missing in the configuration, make sure to always put all hours from 0 to 23 in the configuration file.");
             }
@@ -68,17 +68,26 @@ public class PayCalculatorService {
 
     private void fillListOfWorkingHours() {
         for (int i = 0; i < numberOfWorkingDays; i++) {
-            System.out.println("Enter working hours for day " + (i + 1) + " (2 Integers between 0 and 23 separated by space)");
-            String[] workingTime = scanner.nextLine().split(" ");
+            boolean missingWorkingHour = true;
+            while (missingWorkingHour) {
 
-            boolean[] workingHours = new boolean[24];
-            int startHour = Integer.parseInt(workingTime[0]);
-            int endHour = Integer.parseInt(workingTime[1]);
+                System.out.println("Enter working hours for day " + (i + 1) + " (2 Integers between 0 and 23 separated by space)");
+                String[] workingTime = scanner.nextLine().split(" ");
 
-            for (int j = startHour; j < endHour; j++) {
-                workingHours[j] = true;
+                boolean[] workingHours = new boolean[24];
+                int startHour = Integer.parseInt(workingTime[0]);
+                int endHour = Integer.parseInt(workingTime[1]);
+
+                if (startHour >= endHour) {
+                    System.out.println("Error : starting hour must be before end hour. Please enter again");
+                } else {
+                    missingWorkingHour = false;
+                }
+                for (int j = startHour; j < endHour; j++) {
+                    workingHours[j] = true;
+                }
+                listOfWorkingHours.add(workingHours);
             }
-            listOfWorkingHours.add(workingHours);
         }
     }
 
